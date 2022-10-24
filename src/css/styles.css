@@ -8,6 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
+  background-image: url(../images/Political-World-Map-3360.jpg);
+  background-size: cover, cover; 
+  background-position: center top;
+  background-repeat: no-repeat;
   color: #212121;
   line-height: 1.5;
 }
@@ -17,4 +21,48 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+img {
+  width: 40px;
+}
+
+.country-list {
+  padding: 15px;
+}
+.country-list, .country-info {
+  border-radius: 5px;
+  background-color: #fafafa;
+  width: fit-content; 
+}
+
+.country-list, .country-info__list {
+  list-style: none;
+}
+
+.country-info__list {
+  padding: 15px;
+}
+
+.country-list__item {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.country-list__item:not(:last-child), .country-info__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.country-info__title {
+  display: flex;
+  gap: 15px;
+  padding-left: 15px;
+}
+
+.country-info__item {
+  font-size: 24px;
+}
+
+.country-list__text, .country-info__category {
+  font-weight: bold;
+  margin-left: 10px;
 }
