@@ -6,7 +6,6 @@ import countryListTmpl from './templates/country-list.hbs';
 import countryInfoTmpl from './templates/country-info.hbs';
 
 const DEBOUNCE_DELAY = 300;
-countryListTmpl();
 
 const refs = {
   searchInput: document.querySelector('#search-box'),
@@ -17,7 +16,7 @@ const refs = {
 refs.searchInput.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
 function onSearch() {
-  cleanSearch();
+  clearSearch();
 
   const name = this.value.trim();
 
@@ -36,12 +35,10 @@ function onSearch() {
       switch (true) {
         case response.length === 1:
           countryInfoMarkup(response[0]);
-          // countryInfoTmpl(response[0]);
           break;
 
         case response.length <= 10:
           countryListMarkup(response);
-          // countryListTmpl(response);
           break;
 
         case response.length > 10:
@@ -53,7 +50,7 @@ function onSearch() {
     .catch(error => Notiflix.Notify.failure(error.message));
 }
 
-function cleanSearch() {
+function clearSearch() {
   refs.countryListUl.innerHTML = '';
   refs.countryInfoDiv.innerHTML = '';
 }
